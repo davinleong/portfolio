@@ -15,3 +15,14 @@ Here’s how a request flow works:
     Backend optionally stores/retrieves info via Supabase.
 
     Sends response → frontend shows success message.
+
+
+
+Fastify is the API layer.
+
+next.js frontend fetches from fastify, fastify talks to supabase using the supabase node client
+
+
+
+Supabase
+- using service key on server to bypass RLS
