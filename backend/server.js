@@ -24,6 +24,14 @@ fastify.get('/projects', async function handler (request, reply) {
   reply.send({ projects, error })
 })
 
+// Posts
+fastify.get('/posts', async function handler (request, reply) {
+  let { data: posts, error } = await supabase
+  .from('posts')
+  .select('*')
+  reply.send({ posts, error })
+})
+
 // Run the server!
 try {
   await fastify.listen({ port: 8000 })
