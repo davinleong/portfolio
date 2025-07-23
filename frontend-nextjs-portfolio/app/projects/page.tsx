@@ -1,10 +1,15 @@
-import projectsData from '@/data/projectsData'
+// import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 
-export default function Projects() {
+export default async function Projects() {
+  const projectsData = await fetch('http://localhost:8000/projects')
+  const { projects } = await projectsData.json()
+  if (!projects || projects.error) {
+    return <div>Error loading projects</div>
+  }
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -13,12 +18,12 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Showcase your projects with a hero image (16 x 9)
+            All the cool things I have worked on!
           </p>
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
+            {projects.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}

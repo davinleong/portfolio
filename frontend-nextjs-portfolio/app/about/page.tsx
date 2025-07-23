@@ -13,6 +13,10 @@ export default function Page() {
   return (
     <>
       <AuthorLayout content={mainContent}>
+        <h2 className="text-xl text-gray-500 dark:text-gray-400 mb-4">
+          {/* Add your subtitle text here */}
+          Hi I'm Davin! 👋
+        </h2>
         <MDXLayoutRenderer code={author.body.code} />
       </AuthorLayout>
     </>
