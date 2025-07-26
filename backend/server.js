@@ -10,6 +10,7 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://ebxhdutszqfkfgkbflxn.supabase.co'
 const supabaseServiceKey = process.env.SUPABASE_SERVICEKEY
 const supabase = createClient(supabaseUrl, supabaseServiceKey)
+const port = process.env.PORT || 8000
 
 // Declare a route
 fastify.get('/', async function handler (request, reply) {
@@ -34,7 +35,8 @@ fastify.get('/posts', async function handler (request, reply) {
 
 // Run the server!
 try {
-  await fastify.listen({ port: 8000 })
+  await fastify.listen({ port: port})
+  console.log(`Server is running on port ${port}`)
 } catch (err) {
   fastify.log.error(err)
   process.exit(1)
