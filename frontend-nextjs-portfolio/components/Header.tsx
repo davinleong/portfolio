@@ -1,3 +1,4 @@
+"use client"
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
@@ -5,15 +6,22 @@ import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
+import { motion } from 'motion/react'
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
+  let headerClass = 'flex items-center justify-between w-full max-w-7xl mt-4 mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-gray-50 dark:bg-gray-950 rounded-xl shadow-md dark:shadow-gray-800 border-b border-gray-200 dark:border-gray-800';
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
 
   return (
-    <header className={headerClass}>
+    <motion.header
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ duration: 0.3 }}
+      className={headerClass}
+    >
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
           <div className="mr-3">
@@ -46,7 +54,7 @@ const Header = () => {
         <ThemeSwitch />
         <MobileNav />
       </div>
-    </header>
+    </motion.header>
   )
 }
 

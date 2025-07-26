@@ -82,6 +82,10 @@ module.exports = () => {
           protocol: 'https',
           hostname: 't4.ftcdn.net',
         },
+        {
+          protocol: 'https',
+          hostname: 'hips.hearstapps.com',
+        }
       ],
       unoptimized,
     },

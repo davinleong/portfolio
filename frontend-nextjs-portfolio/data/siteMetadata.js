@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Davin\'s Blog',
   author: 'Davin Leong',
   // headerTitle: 'wahoo',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'A software developer who enjoys building things website.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https:davinleong.dev',
