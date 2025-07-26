@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'motion/react'
 export const metadata = genPageMetadata({ title: 'Projects' })
 
 export default async function Projects() {
-  const projectsData = await fetch(`${process.env.DATABASE_URL}/projects`)
+  const projectsData = await fetch(`${process.env.API_URL}/projects`)
   const { projects } = await projectsData.json()
   if (!projects || projects.error) {
     return <div>Error loading projects</div>
