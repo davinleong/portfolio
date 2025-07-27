@@ -85,6 +85,10 @@ module.exports = () => {
         {
           protocol: 'https',
           hostname: 'hips.hearstapps.com',
+        },
+        {
+          protocol: 'https',
+          hostname: '*',
         }
       ],
       unoptimized,
