@@ -27,7 +27,7 @@ This site is my creative space to showcase my projects, skills, and experiences 
 
 ### Prerequisites
 Make sure you have:
-- [Node.js](https://nodejs.org/) (vXX or higher)
+- [Node.js](https://nodejs.org/) (v18.x or higher)
 - npm or yarn
 
 ### Installation
